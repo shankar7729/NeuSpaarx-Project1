@@ -555,7 +555,7 @@ export default function MainJD() {
     }
   }
   return (
-    <div className="w-full flex-1 min-h-screen mx-auto p-5 bg-slate-50 font-sans text-slate-800">
+    <div className=" w-full flex-1 min-h-screen mx-auto p-2 ml-55 bg-slate-50 font-sans text-slate-800">
       <header className="mb-2">
         <h1 className="text-xl font-bold">Post a Job Description</h1>
         <p className="text-slate-500 text-sm">

@@ -1,34 +1,14 @@
-// import React from 'react'
-// import Homepage from './Homepage'
-// import { Route, Routes } from 'react-router-dom'
-// import PostJD from './PostJD'
-// import CandidatesList from './CandidatesList'
-// import ScorecardView from './ScorecardView'
-
-// const App = () => {
-//   return (
-//     <div>
-//       <Routes>
-//         <Route path="/" element={<Homepage />} />
-//         <Route path="/dashboard" element={<Homepage />} />
-//         <Route path="/PostJD" element={<PostJD />} />
-//         <Route path="/candidates" element={<CandidatesList />} />
-//         <Route path="/scorecard" element={<ScorecardView />} />
-//       </Routes>
-
-//     </div>
-//   )
-// }
-
-// export default App
 
 import React, { useState } from "react";
-import Homepage from "./Homepage";
 import { Route, Routes } from "react-router-dom";
 import PostJD from "./PostJD";
 import CandidatesList from "./CandidatesList";
 import ScorecardView from "./ScorecardView";
-import HRMaybeBucketDashboard from "./MaybeBucket";
+import Dashboard from "./Dashboard";
+import LoginPage from "./LoginPage";
+import ShortlistedPage from "./ShortlistedPage";
+import { Settings } from "lucide-react";
+import SettingsPage from "./SettingsPage";
 
 const App = () => {
   const [candidates, setCandidates] = useState([
@@ -65,10 +45,10 @@ const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/dashboard" element={<Homepage />} />
+        <Route path="/" element={<Dashboard />} />
         <Route path="/PostJD" element={<PostJD />} />
-        <Route path="/maybe" element={<HRMaybeBucketDashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/shortlisted" element={<ShortlistedPage />} />
         <Route path="/candidates" element={<CandidatesList candidates={candidates} setSelectedIndex={setSelectedIndex}/>}/>
         <Route path="/scorecard" element={selectedCandidate ? (<ScorecardView
         candidate={selectedCandidate}
@@ -77,6 +57,9 @@ const App = () => {
         selectedIndex={selectedIndex}
         setSelectedIndex={setSelectedIndex}
       />) : (<CandidatesList candidates={candidates} setSelectedIndex={setSelectedIndex}/>)}/>
+       <Route path="/login" element={<LoginPage />} />
+       <Route path="/settings" element={<SettingsPage/>} />
+
       </Routes>
     </div>
   );

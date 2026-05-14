@@ -5,7 +5,7 @@ import Navbar from './Navbar'
 
 const PostJD = () => {
   return (
-    <div calssName='post-jd-page flex flex-col h-screen'>
+    <div className='post-jd-page flex flex-col h-screen'>
         <Navbar />
         <div className='post-jd'>
             <LeftPartJD /> 

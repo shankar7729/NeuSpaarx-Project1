@@ -1,7 +1,11 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Mail } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 const LeftPartJD = () => {
+  const [openFrontend, setOpenFrontend] = useState(false);
+  const [openML, setOpenML] = useState(false);
+  const [openPM, setOpenPM] = useState(false);
 
   const navigate = useNavigate();
 
@@ -27,10 +31,10 @@ const LeftPartJD = () => {
   ];
 
   return (
-    <div className="w-64 h-screen bg-white border-r border-slate-100 p-4 flex flex-col">
+    <div className="w-55 h-screen fixed left-0 top-8 bg-white border-r border-slate-100 p-2 flex flex-col">
 
       {/* Sidebar Label */}
-      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.15em] mt-[-10px]">
+      <p className="text-[13px] text-left !mt-2 font-bold text-slate-400 uppercase tracking-[0.15em]">
         Overview
       </p>
 
@@ -43,11 +47,10 @@ const LeftPartJD = () => {
 
             onClick={() => navigate(item.path)}
 
-            className={`w-full flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 group ${
-              item.active
-                ? "bg-blue-50 text-blue-600 shadow-sm"
-                : "text-slate-500 hover:bg-slate-50 hover:text-slate-800"
-            }`}
+            className={`w-full flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 group ${item.active
+              ? "bg-blue-50 text-blue-600 shadow-sm"
+              : "text-slate-500 hover:bg-slate-50 hover:text-slate-800"
+              }`}
           >
 
             {/* ICONS */}
@@ -107,6 +110,248 @@ const LeftPartJD = () => {
         ))}
 
       </nav>
+
+      <div className="mt-8 gap-6 ">
+
+        <p className="text-left text-xs text-gray-400 tracking-widest mb-4">
+          JOB OPENINGS
+        </p>
+
+        {/* Frontend */}
+        <div className="hover:bg-blue-100 rounded-xl p-1">
+
+          {/* CLICKABLE HEADER */}
+          <button
+            onClick={() => setOpenFrontend(!openFrontend)}
+            className="w-full flex items-center justify-between p-2 rounded-lg hover:bg-blue-100 transition-all duration-200 cursor-pointer"
+          >
+
+            {/* Left */}
+            <div className="flex items-center gap-1">
+
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+
+              <h3 className="font-semibold text-blue-600 text-xs">
+                Frontend Engineer
+              </h3>
+
+            </div>
+
+            {/* Right */}
+            <div className="flex items-center gap-2">
+
+              <span className="text-slate-500 text-xs">
+                248
+              </span>
+
+              <span
+                className={`text-xs transition-transform duration-300 ${openFrontend ? "rotate-180" : ""
+                  }`}
+              >
+                ▼
+              </span>
+
+            </div>
+
+          </button>
+
+          {/* EXPANDABLE CONTENT */}
+          {openFrontend && (
+
+            <div className="mt-2 animate-fadeIn">
+
+              <div className="inline-block bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">
+                9 Strong
+              </div>
+              <div className="inline-block bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">
+                12 Maybe
+              </div>
+
+              <div className="mt-3 space-y-2 text-slate-600">
+
+                {/* Candidates */}
+                <Link
+                  to="/candidates"
+                  className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-100 text-sm transition"
+                >
+                  <span>◎</span>
+                  <span>Candidates</span>
+                </Link>
+
+                {/* Shortlisted */}
+                <Link
+                  to="/shortlisted"
+                  className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-100 text-sm transition"
+                >
+                  <Mail size={16} strokeWidth={1.5} />
+                  <span>Shortlisted</span>
+                </Link>
+
+              </div>
+
+            </div>
+
+          )}
+
+        </div>
+
+        {/* ML Engineer */}
+        <div className="hover:bg-blue-100 rounded-xl p-1">
+
+          {/* CLICKABLE HEADER */}
+          <button
+            onClick={() => setOpenML(!openML)}
+            className="w-full flex items-center justify-between p-2 rounded-lg hover:bg-blue-100 transition-all duration-200 cursor-pointer"
+          >
+
+            {/* Left */}
+            <div className="flex items-center gap-1">
+
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+
+              <h3 className="font-semibold text-blue-600 text-xs">
+                ML Engineer
+              </h3>
+
+            </div>
+
+            {/* Right */}
+            <div className="flex items-center gap-2">
+
+              <span className="text-slate-500 text-xs">
+                134
+              </span>
+
+              <span
+                className={`text-xs transition-transform duration-300 ${openFrontend ? "rotate-180" : ""
+                  }`}
+              >
+                ▼
+              </span>
+
+            </div>
+
+          </button>
+
+          {/* EXPANDABLE CONTENT */}
+          {openML && (
+
+            <div className="mt-2 animate-fadeIn">
+
+              <div className="inline-block bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">
+                7 Strong
+              </div>
+              <div className="inline-block bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">
+                8 Maybe
+              </div>
+
+              <div className="mt-3 space-y-2 text-slate-600">
+
+                {/* Candidates */}
+                <Link
+                  to="/candidates"
+                  className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-100 text-sm transition"
+                >
+                  <span>◎</span>
+                  <span>Candidates</span>
+                </Link>
+
+                {/* Shortlisted */}
+                <Link
+                  to="/shortlisted"
+                  className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-100 text-sm transition"
+                >
+                  <Mail size={16} strokeWidth={1.5} />
+                  <span>Shortlisted</span>
+                </Link>
+
+              </div>
+
+            </div>
+
+          )}
+
+        </div>
+
+        {/* Product Manager */}
+        <div className="hover:bg-blue-100 rounded-xl p-1">
+
+          {/* CLICKABLE HEADER */}
+          <button
+            onClick={() => setOpenPM(!openPM)}
+            className="w-full flex items-center justify-between p-2 rounded-lg hover:bg-blue-100 transition-all duration-200 cursor-pointer"
+          >
+
+            {/* Left */}
+            <div className="flex items-center gap-1">
+
+              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+
+              <h3 className="font-semibold text-blue-600 text-xs">
+                Product Manager
+              </h3>
+
+            </div>
+
+            {/* Right */}
+            <div className="flex items-center gap-2">
+
+              <span className="text-slate-500 text-xs">
+                89
+              </span>
+
+              <span
+                className={`text-xs transition-transform duration-300 ${openFrontend ? "rotate-180" : ""
+                  }`}
+              >
+                ▼
+              </span>
+
+            </div>
+
+          </button>
+
+          {/* EXPANDABLE CONTENT */}
+          {openPM && (
+
+            <div className="mt-2 animate-fadeIn">
+
+              <div className="inline-block bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">
+                4 Strong
+              </div>
+              <div className="inline-block bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">
+                5 Maybe
+              </div>
+
+              <div className="mt-3 space-y-2 text-slate-600">
+
+                {/* Candidates */}
+                <Link
+                  to="/candidates"
+                  className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-100 text-sm transition"
+                >
+                  <span>◎</span>
+                  <span>Candidates</span>
+                </Link>
+
+                {/* Shortlisted */}
+                <Link
+                  to="/shortlisted"
+                  className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-100 text-sm transition"
+                >
+                  <Mail size={16} strokeWidth={1.5} />
+                  <span>Shortlisted</span>
+                </Link>
+
+              </div>
+
+            </div>
+
+          )}
+
+        </div>
+
+      </div>
     </div>
   );
 };
