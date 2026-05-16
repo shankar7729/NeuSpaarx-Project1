@@ -149,7 +149,7 @@ const Dashboard = () => {
         <div className="w-55 fixed left-0 top-10 h-screen bg-white border-r px-4 py-6">
 
           {/* OVERVIEW */}
-          <p className="text-left text-xs text-gray-400 tracking-widest mb-3">
+          <p className="text-xs uppercase text-gray-400 tracking-widest mb-3">
             OVERVIEW
           </p>
 

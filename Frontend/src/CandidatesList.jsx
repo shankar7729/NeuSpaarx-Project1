@@ -141,7 +141,7 @@ const CandidatesList = ({ candidater = [], setSelectedIndex = () => { } }) => {
             <Navbar />
             <div className="flex min-h-screen bg-[#f5f7fb]">
                 {/* SIDEBAR */}
-                <div className="w-55 bg-white border-r border-gray-200 -mx-2 py-[-3]">
+                <div className="w-55 fixed left-0 top-10 h-screen bg-white border-r px-4 py-6]">
                     {/* OVERVIEW */}
                     <p className=" text-xs uppercase text-gray-400 tracking-widest mb-3">
                         Overview
@@ -473,7 +473,7 @@ const CandidatesList = ({ candidater = [], setSelectedIndex = () => { } }) => {
 
                 {/* MAIN CONTENT */}
                 {/* MAIN CONTENT */}
-                <div className="flex-1 p-2 bg-[#f6f8fc] min-h-screen">
+                <div className="ml-60 flex-1 p-4 bg-[#f6f8fc] min-h-screen">
 
                      {/* TOP CARD */}
       <div className="bg-white border border-slate-200 rounded-3xl overflow-hidden flex">

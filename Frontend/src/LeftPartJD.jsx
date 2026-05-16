@@ -31,10 +31,10 @@ const LeftPartJD = () => {
   ];
 
   return (
-    <div className="w-55 h-screen fixed left-0 top-8 bg-white border-r border-slate-100 p-2 flex flex-col">
+    <div className="w-55 fixed left-0 top-10 h-screen bg-white border-r px-4 py-6">
 
       {/* Sidebar Label */}
-      <p className="text-[13px] text-left !mt-2 font-bold text-slate-400 uppercase tracking-[0.15em]">
+      <p className="text-xs uppercase text-gray-400 tracking-widest mb-3">
         Overview
       </p>
 

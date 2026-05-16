@@ -1,6 +1,6 @@
 import { Mail } from "lucide-react";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import './App.css'
 
@@ -8,6 +8,7 @@ const ShortlistedPage = () => {
   const [openFrontend, setOpenFrontend] = useState(false);
   const [openML, setOpenML] = useState(false);
   const [openPM, setOpenPM] = useState(false);
+  const navigate = useNavigate();
   const shortlistedCandidates = [
     {
       initials: "AS",
@@ -27,6 +28,36 @@ const ShortlistedPage = () => {
       phone: "+91 91234 56789",
       color: "from-purple-400 to-purple-600",
     },
+    {
+      initials:"RM",
+      name:"Rohan Mehta",
+      exp:"6 yrs exp · Experienced",
+      score:91,
+      email:"rohan.m@gmail.com",
+      phone:"+91 97654 32109",
+      color:"from-green-400 to-yellow-600",
+    },
+    {
+      initials:"PT",
+      name:"Priya Tiwari",
+      exp:"1.5 yrs exp · Experienced",
+      score:85,
+      email:"priya.t@email.com",
+      phone:"+91 90123 45678",
+      color:"from-red-400 to-pink-600",
+
+    },
+    {
+      initials:"RD",
+      name:"Riya Desai",
+      exp:"7 yrs exp · Experienced",
+      score:91,
+      email:"riya.d@gmail.com",
+      phone:"+91 98001 23456",
+      color:"from-orange-600 to-yellow-400",
+
+    },
+    
   ];
 
   return (
@@ -48,7 +79,7 @@ const ShortlistedPage = () => {
 
             <Link
               to="/dashboard"
-              className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-100 transition"
+              className="w-full flex items-center gap-1 px-1 py-2 rounded-xl text-slate-600 hover:bg-slate-100 transition"
             >
               <span>▦</span>
               <span className="font-medium">Dashboard</span>
@@ -146,7 +177,7 @@ const ShortlistedPage = () => {
         {/* Candidates */}
         <Link
           to="/candidates"
-          className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-100 text-sm transition"
+          className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-200 text-sm transition"
         >
           <span>◎</span>
           <span>Candidates</span>
@@ -155,7 +186,7 @@ const ShortlistedPage = () => {
         {/* Shortlisted */}
         <Link
           to="/shortlisted"
-          className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-100 text-sm transition"
+          className="flex items-center gap-2 px-2 py-2 rounded-lg bg-blue-200 text-sm transition"
         >
           <Mail size={16} strokeWidth={1.5} />
           <span>Shortlisted</span>
@@ -222,7 +253,7 @@ const ShortlistedPage = () => {
         {/* Candidates */}
         <Link
           to="/candidates"
-          className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-100 text-sm transition"
+          className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-200 text-sm transition"
         >
           <span>◎</span>
           <span>Candidates</span>
@@ -231,7 +262,7 @@ const ShortlistedPage = () => {
         {/* Shortlisted */}
         <Link
           to="/shortlisted"
-          className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-100 text-sm transition"
+          className="flex items-center gap-2 px-2 py-2 rounded-lg bg-blue-200 text-sm transition"
         >
           <Mail size={16} strokeWidth={1.5} />
           <span>Shortlisted</span>
@@ -298,7 +329,7 @@ const ShortlistedPage = () => {
         {/* Candidates */}
         <Link
           to="/candidates"
-          className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-100 text-sm transition"
+          className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-200 text-sm transition"
         >
           <span>◎</span>
           <span>Candidates</span>
@@ -307,7 +338,7 @@ const ShortlistedPage = () => {
         {/* Shortlisted */}
         <Link
           to="/shortlisted"
-          className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-blue-100 text-sm transition"
+          className="flex items-center gap-2 px-2 py-2 rounded-lg bg-blue-200 text-sm transition"
         >
           <Mail size={16} strokeWidth={1.5} />
           <span>Shortlisted</span>
@@ -430,7 +461,7 @@ const ShortlistedPage = () => {
 
               {/* Button */}
               <div>
-                <button className="border border-slate-200 hover:bg-slate-100 px-1 py-2 rounded-xl font-medium text-slate-600 transition text-xs">
+                <button onClick={()=>navigate('/scorecard')} className="border border-slate-200 hover:bg-slate-100 px-1 py-2 rounded-xl font-medium text-slate-600 transition text-xs">
                   View Scorecard
                 </button>
               </div>

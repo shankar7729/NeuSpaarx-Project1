@@ -174,10 +174,10 @@ export default function SettingsPage() {
 
               <thead className="bg-gray-50 text-gray-500 text-sm uppercase">
                 <tr>
-                  <th className="text-left px-10 py-1">Name</th>
-                  <th className="text-left px-6 py-1">Email Address</th>
-                  <th className="text-left px-6 py-1">Added On</th>
-                  <th className="text-right px-6 py-1">Action</th>
+                  <th className="text-left px-20 py-1">Name</th>
+                  <th className="text-left px-20 py-1">Email Address</th>
+                  <th className="text-left px-20 py-1">Added On</th>
+                  <th className="text-right px-20 py-1">Action</th>
                 </tr>
               </thead>
 
